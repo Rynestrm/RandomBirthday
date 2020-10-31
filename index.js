@@ -1,5 +1,5 @@
 birthdayGif = document.querySelector(".birthdayGif");
-button = document.querySelector('.button');
+button = document.querySelector('.btn');
 
 async function getGifs() {
     const responce = await fetch(
@@ -9,8 +9,7 @@ async function getGifs() {
     const gifs = [...data.data];
     let randomGifObject = gifs[Math.floor(Math.random() * gifs.length)];
     let randomGif = randomGifObject.images.original.url;
-    birthdayGif.innerHTML = `<img src="${randomGif}" alt="random birthday gifs">`
-
+    birthdayGif.innerHTML = `<img class="img-fluid" src="${randomGif}" alt="random birthday gifs">`
 }
 
 getGifs();
